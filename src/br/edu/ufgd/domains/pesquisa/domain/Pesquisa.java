@@ -29,6 +29,9 @@ class Pesquisa extends Entity {
     public Boolean validate() {
         if(titulo == null || titulo.isEmpty()) return Boolean.FALSE;
 
+        if(dataInicio == null || dataFim == null) return Boolean.FALSE;
+
+        if(dataInicio.after(dataFim)) return Boolean.FALSE;
 
         return Boolean.TRUE;
     }
