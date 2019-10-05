@@ -58,4 +58,11 @@ public class PhoneNumberTest {
         //System.out.println(telefoneJean2.hashCode());
         Assert.assertEquals(telefoneJean.hashCode(), telefoneJean2.hashCode());
     }
+
+    @Test
+    public void deveApresentarNumeracaoCorretamenteDoToString(){
+        PhoneNumberComHashCode telefoneJean = new PhoneNumberComHashCode(67, 99221, 9242);
+        String numeroFormatadoCorreto = "(67) 99221-9242";
+        Assert.assertEquals(numeroFormatadoCorreto, telefoneJean.toString());
+    }
 }
