@@ -1,4 +1,4 @@
-package br.edu.ufgd.exemploServices;
+package br.edu.ufgd.exemplo.services;
 
 import org.junit.Test;
 

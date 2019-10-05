@@ -1,6 +1,5 @@
-package br.edu.ufgd.exemploServices;
+package br.edu.ufgd.exemplo.services;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 

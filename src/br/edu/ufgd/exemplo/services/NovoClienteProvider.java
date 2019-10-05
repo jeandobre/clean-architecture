@@ -1,4 +1,4 @@
-package br.edu.ufgd.exemploServices;
+package br.edu.ufgd.exemplo.services;
 
 public class NovoClienteProvider implements Provider {
 
