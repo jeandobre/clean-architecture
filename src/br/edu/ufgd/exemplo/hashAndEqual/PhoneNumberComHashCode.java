@@ -2,9 +2,9 @@ package br.edu.ufgd.exemplo.hashAndEqual;
 
 import java.util.Objects;
 
-public final class PhoneNumberComHashCode {
+public final class PhoneNumberComHashCode implements Comparable<PhoneNumberComHashCode> {
     private final short areaCode;
-    private final short prefix;
+    private final int prefix;
     private final short lineNumber;
 
     public PhoneNumberComHashCode(int areaCode, int prefix, int lineNumber) {
@@ -12,7 +12,7 @@ public final class PhoneNumberComHashCode {
         rangeCheck(prefix, 99999, "prefix");
         rangeCheck(lineNumber, 9999, "line number");
         this.areaCode = (short) areaCode;
-        this.prefix = (short) prefix;
+        this.prefix = prefix;
         this.lineNumber = (short) lineNumber;
     }
 
@@ -45,5 +45,55 @@ public final class PhoneNumberComHashCode {
 
         return result;
         //return Objects.hash(areaCode, prefix, lineNumber);
+    }
+
+    /**
+     * Returns the string representation of this phone number.
+     * The string constists of fourteen characters whise format
+     * is "(xx) yyyyy-zzzz", where xx is the area code, yyyyy is
+     * the prefix, and zzzz is the line number. (each of the
+     * captal letters represents a single decimal digit.)
+     *
+     * if anu of the thre parts of this phone number is too small
+     * to fill up ts field, the field is padded with leading zeros.
+     * For exemaple, if the value of the line number is 123, the last
+     * four characters of the string representation will be "0123".
+     *
+     * Note that threre is a single space separating the closing
+     * parenthesis after the area code from the first digit of the
+     * prefix.
+     */
+    @Override
+    public String toString() {
+        //return "(" + areaCode + ") " + prefix + "-" + lineNumber;
+        return String.format("(%02d) %05d-%04d", areaCode, prefix, lineNumber);
+    }
+
+    @Override
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e){
+            throw new AssertionError(); //Não pode acontecer
+        }
+    }
+
+    @Override
+    public int compareTo(PhoneNumberComHashCode pn) {
+        // Compare area codes
+        if(areaCode < pn.areaCode) return -1;
+        if(areaCode > pn.areaCode) return 1;
+
+        // Area codes are equal, compare prefixes
+
+        if(prefix < pn.prefix) return -1;
+        if(prefix > pn.prefix) return  1;
+
+        // area codes and prefixes are equal, compare line numbers
+
+        if(lineNumber < pn.lineNumber) return -1;
+        if(lineNumber > pn.lineNumber) return 1;
+
+        return 0; // All fields are equal
     }
 }
