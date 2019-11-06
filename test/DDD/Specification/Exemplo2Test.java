@@ -1,8 +1,11 @@
 package DDD.Specification;
 
+import br.edu.ufgd.DDD.Specification.Specification;
 import br.edu.ufgd.DDD.Specification.exemplo1.ContainerSpecification;
 import br.edu.ufgd.DDD.Specification.exemplo1.Feature;
-import br.edu.ufgd.DDD.Specification.Specification;
+import br.edu.ufgd.DDD.Specification.exemplo2.AndSpecification;
+import br.edu.ufgd.DDD.Specification.exemplo2.NotSpecification;
+import br.edu.ufgd.DDD.Specification.exemplo2.OrSpecification;
 import org.junit.Test;
 
 /**
@@ -11,7 +14,7 @@ import org.junit.Test;
  * Capítulo 10: Design Flexível
  *
  */
-public class Exemplo1Test {
+public class Exemplo2Test {
 
     @Test
     public void validarImplementacaoAmbas(){
@@ -19,7 +22,7 @@ public class Exemplo1Test {
         Specification ventiled = new ContainerSpecification(Feature.VENTILATED);
         Specification armored = new ContainerSpecification(Feature.ARMORED);
 
-        Specification both = ventiled.and(armored);
+        new AndSpecification(ventiled, armored);
     }
 
     @Test
@@ -28,7 +31,7 @@ public class Exemplo1Test {
         Specification ventilatedType1 = new ContainerSpecification(Feature.VENTILATED_TYPE_1);
         Specification ventilatedType2 = new ContainerSpecification(Feature.VENTILATED_TYPE_2);
 
-        Specification either = ventilatedType1.or(ventilatedType2);
+        new OrSpecification(ventilatedType1, ventilatedType2);
     }
 
     @Test
@@ -37,6 +40,7 @@ public class Exemplo1Test {
         Specification ventiled = new ContainerSpecification(Feature.VENTILATED);
         Specification armored = new ContainerSpecification(Feature.ARMORED);
 
-        Specification cheap = (ventiled.not()).and(armored.not());
+        new NotSpecification(ventiled);
+        new NotSpecification(armored);
     }
 }
