@@ -1,7 +1,7 @@
 package br.edu.ufgd.exemplo.singleton;
 
 
-//A melhor abordagem
+//A melhor abordagem - Abordagem aconselhável
 public enum Exemplo3 {
 
     INSTANCE;
