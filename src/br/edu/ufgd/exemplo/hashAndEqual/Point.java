@@ -22,4 +22,10 @@ public class Point {
         return x == point.x &&
                 y == point.y;
     }
+
+    //Método hashCode de uma linha - desempenho fraco
+    @Override
+    public int hashCode(){
+        return Objects.hash(x, y);
+    }
 }
