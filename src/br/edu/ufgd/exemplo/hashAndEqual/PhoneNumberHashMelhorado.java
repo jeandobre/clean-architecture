@@ -1,5 +1,9 @@
 package br.edu.ufgd.exemplo.hashAndEqual;
 
+import java.util.Comparator;
+
+import static java.util.Comparator.comparingInt;
+
 public final class PhoneNumberHashMelhorado implements Comparable<PhoneNumberHashMelhorado> {
     private final short areaCode;
     private final int prefix;
@@ -69,22 +73,13 @@ public final class PhoneNumberHashMelhorado implements Comparable<PhoneNumberHas
         }
     }
 
+    private static final Comparator<PhoneNumberHashMelhorado> COMPARATOR = comparingInt((PhoneNumberHashMelhorado pn) -> pn.areaCode)
+            .thenComparingInt(pn -> pn.prefix)
+            .thenComparingInt(pn -> pn.lineNumber);
+
+    //Melhorado usado o método de construção estático
     @Override
-    public int compareTo(PhoneNumberHashMelhorado pn) {
-        // Compare area codes
-        if(areaCode < pn.areaCode) return -1;
-        if(areaCode > pn.areaCode) return 1;
-
-        // Area codes are equal, compare prefixes
-
-        if(prefix < pn.prefix) return -1;
-        if(prefix > pn.prefix) return  1;
-
-        // area codes and prefixes are equal, compare line numbers
-
-        if(lineNumber < pn.lineNumber) return -1;
-        if(lineNumber > pn.lineNumber) return 1;
-
-        return 0; // All fields are equal
+    public int compareTo(PhoneNumberHashMelhorado pn){
+        return COMPARATOR.compare(this, pn);
     }
 }

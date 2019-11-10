@@ -77,7 +77,7 @@ public final class PhoneNumberComHashCode implements Comparable<PhoneNumberComHa
             throw new AssertionError(); //Não pode acontecer
         }
     }
-
+/* Versão anterior ao Java 7
     @Override
     public int compareTo(PhoneNumberComHashCode pn) {
         // Compare area codes
@@ -96,4 +96,22 @@ public final class PhoneNumberComHashCode implements Comparable<PhoneNumberComHa
 
         return 0; // All fields are equal
     }
+
+    */
+    /**
+     * Método melhorado, usado a compare os objects ao invés de > ou <
+     * @param pn
+     * @return
+     */
+    @Override
+    public int compareTo(PhoneNumberComHashCode pn) {
+        int result = Short.compare(areaCode, pn.areaCode);
+        if(result == 0) {
+            result = Integer.compare(prefix, pn.prefix);
+            if(result == 0)
+                result = Short.compare(lineNumber, pn.lineNumber);
+        }
+        return result;
+    }
+
 }
