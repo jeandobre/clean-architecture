@@ -1,4 +1,4 @@
-package br.edu.ufgd.DDD.Specification.exemplo1;
+package br.edu.ufgd.ddd.specification.exemplo1;
 
 public enum Feature {
 

@@ -1,4 +1,4 @@
-package br.edu.ufgd.DDD.Specification;
+package br.edu.ufgd.ddd.specification;
 
 public interface Specification {
     boolean isSatisfiedBy(Object candidate);

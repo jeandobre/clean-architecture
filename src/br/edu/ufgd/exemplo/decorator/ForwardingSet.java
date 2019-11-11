@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.Set;
 
 // Classe reutilizável de encaminhamento
+// Classe Wrapper (classe empacotadora)
+// usa composição em vez de herança
 public class ForwardingSet<E> implements Set<E> {
 
     private final Set<E> s;
@@ -88,6 +90,13 @@ public class ForwardingSet<E> implements Set<E> {
         return s.hashCode();
     }
 
+    /**
+     * @implSpec Método que transforma o objeto atual em uma representação
+     * de String
+     * @since 1.2
+     * @author JeanDobre
+     * @return String
+     */
     @Override
     public String toString() {
         return s.toString();

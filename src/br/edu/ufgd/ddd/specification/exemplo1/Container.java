@@ -1,4 +1,4 @@
-package br.edu.ufgd.DDD.Specification.exemplo1;
+package br.edu.ufgd.ddd.specification.exemplo1;
 
 import java.util.ArrayList;
 import java.util.List;

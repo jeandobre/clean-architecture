@@ -1,8 +1,8 @@
 package DDD.Specification;
 
-import br.edu.ufgd.DDD.Specification.exemplo1.ContainerSpecification;
-import br.edu.ufgd.DDD.Specification.exemplo1.Feature;
-import br.edu.ufgd.DDD.Specification.Specification;
+import br.edu.ufgd.ddd.specification.exemplo1.ContainerSpecification;
+import br.edu.ufgd.ddd.specification.exemplo1.Feature;
+import br.edu.ufgd.ddd.specification.Specification;
 import org.junit.Test;
 
 /**

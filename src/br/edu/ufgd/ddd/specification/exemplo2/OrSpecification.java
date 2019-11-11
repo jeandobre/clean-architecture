@@ -1,6 +1,6 @@
-package br.edu.ufgd.DDD.Specification.exemplo2;
+package br.edu.ufgd.ddd.specification.exemplo2;
 
-import br.edu.ufgd.DDD.Specification.Specification;
+import br.edu.ufgd.ddd.specification.Specification;
 
 public class OrSpecification extends AbstractSpecification {
 

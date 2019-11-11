@@ -1,6 +1,6 @@
-package br.edu.ufgd.DDD.Specification.exemplo1;
+package br.edu.ufgd.ddd.specification.exemplo1;
 
-import br.edu.ufgd.DDD.Specification.Specification;
+import br.edu.ufgd.ddd.specification.Specification;
 
 /**
  * Livro DDD Evans

@@ -1,11 +1,11 @@
 package DDD.Specification;
 
-import br.edu.ufgd.DDD.Specification.Specification;
-import br.edu.ufgd.DDD.Specification.exemplo1.ContainerSpecification;
-import br.edu.ufgd.DDD.Specification.exemplo1.Feature;
-import br.edu.ufgd.DDD.Specification.exemplo2.AndSpecification;
-import br.edu.ufgd.DDD.Specification.exemplo2.NotSpecification;
-import br.edu.ufgd.DDD.Specification.exemplo2.OrSpecification;
+import br.edu.ufgd.ddd.specification.Specification;
+import br.edu.ufgd.ddd.specification.exemplo1.ContainerSpecification;
+import br.edu.ufgd.ddd.specification.exemplo1.Feature;
+import br.edu.ufgd.ddd.specification.exemplo2.AndSpecification;
+import br.edu.ufgd.ddd.specification.exemplo2.NotSpecification;
+import br.edu.ufgd.ddd.specification.exemplo2.OrSpecification;
 import org.junit.Test;
 
 /**
