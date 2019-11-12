@@ -1,7 +1,7 @@
 package br.edu.ufgd.exemplo.objetosDesnecessarios;
 
-import br.edu.ufgd.exemplo.objetosDesnecesarios.ExemploCorreto;
-import br.edu.ufgd.exemplo.objetosDesnecesarios.ExemploRuim;
+import br.edu.ufgd.exemplo.objetos_desnecesarios.ExemploCorreto;
+import br.edu.ufgd.exemplo.objetos_desnecesarios.ExemploRuim;
 import org.junit.Test;
 
 public class ExemploTest {

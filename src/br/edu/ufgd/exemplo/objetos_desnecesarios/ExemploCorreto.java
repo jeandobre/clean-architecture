@@ -1,4 +1,4 @@
-package br.edu.ufgd.exemplo.objetosDesnecesarios;
+package br.edu.ufgd.exemplo.objetos_desnecesarios;
 
 import java.util.Calendar;
 import java.util.Date;

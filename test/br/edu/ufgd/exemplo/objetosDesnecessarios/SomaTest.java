@@ -1,7 +1,7 @@
 package br.edu.ufgd.exemplo.objetosDesnecessarios;
 
-import br.edu.ufgd.exemplo.objetosDesnecesarios.SomaLenta;
-import br.edu.ufgd.exemplo.objetosDesnecesarios.SomaRapida;
+import br.edu.ufgd.exemplo.objetos_desnecesarios.SomaLenta;
+import br.edu.ufgd.exemplo.objetos_desnecesarios.SomaRapida;
 import org.junit.Test;
 
 public class SomaTest {
