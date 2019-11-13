@@ -1,6 +1,7 @@
 package br.edu.ufgd.exemplo.genericos;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.EmptyStackException;
 
 /**
@@ -41,4 +42,22 @@ public class Stack<E> {
         if(elements.length == size)
             elements = Arrays.copyOf(elements, 2 * size + 1);
     }
+
+    // TIpo de wildcard para um parâmetro que funciona como um produtor E
+    public void pushAll(Iterable<? extends E> src){
+        //Iterable de algum subtipo de E
+        for(E e : src)
+            push(e);
+    }
+
+    //Método popAll sem tipo de wildcard - deficiente
+    public void popAll(Collection<? super E> dst){
+        //Coleção de algum supertipo de E
+        while(!isEmpty())
+            dst.add(pop());
+    }
+
+    //PECS é a abreviação para PRODUTOR-EXTENDS, CONSUMIDOR-SUPER
+    //se for um produtor-T use <? extends T>
+    //se for um consumidor-T use <? super T>
 }

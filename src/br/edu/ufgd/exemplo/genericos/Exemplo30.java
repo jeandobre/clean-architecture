@@ -16,7 +16,10 @@ public class Exemplo30 {
     }
 
     //Método genérico
-    public static <E> Set<E> union(Set<E> s1, Set<E> s2){
+    //Não use os tipos wildcards limitados com os tipos de retorno
+    // o retorno ainda é Set<E>, não deve ser Set<? extends E>
+    public static <E> Set<E> union(Set<? extends E> s1,
+                                   Set<? extends E> s2){
         Set<E> result = new HashSet<>(s1);
         result.addAll(s2);
         return result;
@@ -37,14 +40,27 @@ public class Exemplo30 {
      * Exemplo de comparabilidade mútua, ou seja, pode ser comparado
      * a ele mesmo
      */
-    public static <E extends Comparable<E>> E max(Collection<E> c){
-        if(c.isEmpty()) throw new IllegalArgumentException("Empty collection");
+    public static <T extends Comparable<? super T>> T max(Collection<? extends T> list){
+        if(list.isEmpty()) throw new IllegalArgumentException("Empty collection");
 
-        E result = null;
-        for(E e: c)
+        T result = null;
+        for(T e: list)
             if(result == null || e.compareTo(result) > 0)
                 result = Objects.requireNonNull(e);
 
         return result;
+    }
+
+    /**
+     * Exemplo swap item 31
+     *
+     */
+    public static void swap(List<?> list, int i, int j){
+        swapHelder(list, i, j);
+    }
+
+    //Método auxiliar privado para a captura do wildcard
+    private static <E> void swapHelder(List<E> list, int i, int j){
+        list.set(i, list.set(j, list.get(i)));
     }
 }
