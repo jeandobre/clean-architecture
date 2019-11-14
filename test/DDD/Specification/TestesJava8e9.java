@@ -1,13 +1,8 @@
 package DDD.Specification;
 
-import br.edu.ufgd.exemplo.hashAndEqual.PhoneNumber;
-import br.edu.ufgd.exemplo.util.RomanNumeral;
+import br.exemplo.util.RomanNumeral;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.io.*;
-import java.util.function.Supplier;
-import java.util.regex.Pattern;
 
 public class TestesJava8e9  {
 
