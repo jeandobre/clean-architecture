@@ -1,3 +1,5 @@
+package br.exemplo;
+
 import java.math.BigInteger;
 import java.util.stream.LongStream;
 
