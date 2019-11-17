@@ -11,7 +11,12 @@ public class Exemplo42 {
         Exemplo42.ordenarLista(words);
         System.out.println(words);
 
+        //Evitar usar streams para valores CHAR
+        //outro exemplo, item 45
+        "Hello world!".chars().forEach(System.out::print);
 
+        //Corrigindo
+        "Hello world!".chars().forEach(x -> System.out.print((char) x));
     }
 
     private static void ordenarLista(List<String> words) {
