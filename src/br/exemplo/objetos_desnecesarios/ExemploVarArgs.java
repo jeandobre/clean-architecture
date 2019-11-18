@@ -30,6 +30,4 @@ public class ExemploVarArgs {
                 min = arg;
         return min;
     }
-
-
 }
