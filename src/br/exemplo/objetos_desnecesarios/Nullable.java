@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class NullAble {
+public class Nullable {
 
     private final List<String> cheesesInStock = new ArrayList<>();
 
