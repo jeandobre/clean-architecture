@@ -1,22 +1,20 @@
 package br.exemplo.objetos_desnecesarios;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 class Pessoa {
 
     private Integer idade;
     private String nome;
     private Set<String> telefones;
+    private Date data;
 
     private Boolean passou = false;
 
-    Pessoa(String nome, Integer idade) {
+    Pessoa(String nome, Integer idade, Date data) {
         this.idade = idade;
         this.nome = nome;
-
+        this.data = data;
         this.telefones = new HashSet<>();
 
         if (this.idade >= 18) passou = true;
@@ -45,6 +43,6 @@ class Pessoa {
 
     @Override
     public String toString() {
-        return nome + ":" + idade + "(" + passou + ")";
+        return nome + ":" + idade + "(" + passou + ")" + data;
     }
 }
